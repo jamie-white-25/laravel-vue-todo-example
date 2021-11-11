@@ -2,6 +2,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # liquidline-test
 
 # getting started 
+set the .env file <br>
 composer install <br>
 php artisan migrate --seed <br>
 register and login <br>

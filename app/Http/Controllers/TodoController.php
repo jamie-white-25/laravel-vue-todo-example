@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTodoRequest;
 use App\Http\Resources\TodoResource;
 use App\Models\Todo;
 use Illuminate\Http\Request;
@@ -47,9 +48,10 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(StoreTodoRequest $request, Todo $todo): TodoResource
     {
-        //
+
+        return new TodoResource(tap($todo)->update($request->validated()));
     }
 
     /**
